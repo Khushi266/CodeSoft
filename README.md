@@ -1,4 +1,4 @@
-# CodeSoft
+# CodSoft
 Internship Assignments
 
 Level_1 Task_1: To create a landing page. 
@@ -8,3 +8,6 @@ I created a landing page about a home decor website using HTML and CSS.
 
 Level_1 Task_2: To create a portfolio webpage 
 I created my portfolio  webpage using HTML and CSS and JAVASCRIPT.
+
+![screencapture-file-E-portfolio-index-html-2023-08-27-10_09_21](https://github.com/Khushi266/CodeSoft/assets/142587660/ded571a4-08bc-4f7e-b8df-11d30f63aaa7)
+
