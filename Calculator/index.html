@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+    margin:0;
+    top:0;
+    background-image: url(images/star.jpg);
+    background-size: 100% 580px;
+}
 
+.grid{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+}
+
+.container{
+    width:100%;
+    height:90vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top:25px;
+}
+.box{
+    background-color:transparent;
+    padding:20px;
+    border-radius:24px;
+}
+.box form input{
+    border:none;
+    width:60px;
+    height:60px;
+    outline:none;
+    border-radius: 10px;
+    margin:7px;
+    color: azure;
+    background-color: rgba(250, 247, 247, 0.4);
+    box-shadow: -8px -8px 15px rgba(204, 193, 193, 0.3), 5px 5px 15px rgba(137, 137, 137, 0.3);
+    font-size: 25px;
+}
+
+form .display{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0px;
+}
+
+form .display input{
+    text-align: right;
+    flex:1;
+    font-size: 45px;
+    box-shadow: -8px -8px 15px rgba(204, 193, 193, 0.3), 5px 5px 15px rgba(137, 137, 137, 0.3);
+    background-color: rgba(250, 247, 247, 0.4);
+    color: azure;
+}
+form input.equal{
+    width: 145px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <form>
+                <div class="display">
+                    <input type="text" readonly="" name="display" id="d"/>
+                </div>
+               <div class="grid">
+                <div><input type="button" value="AC" onclick='c("")'/></div>
+                <div><input type="button" value="DE" onclick="display.value=display.value.toString().slice(0,-1)"/></div>
+                <div><input type="button" value="." onclick='v(".")'/></div>
+                <div><input type="button" value="/" onclick='v("/")'/></div>
+                <div><input type="button" value="9" onclick='v("9")'/></div>
+                <div><input type="button" value="8" onclick='v("8")'/></div>
+                <div><input type="button" value="7" onclick='v("7")'/></div>
+                <div><input type="button" value="*" onclick='v("*")'/></div>
+                <div><input type="button" value="6" onclick='v("6")'/></div>
+                <div><input type="button" value="5" onclick='v("5")'/></div>
+                <div><input type="button" value="4" onclick='v("4")'/></div>
+                <div><input type="button" value="-" onclick='v("-")'/></div>
+                <div><input type="button" value="3" onclick='v("3")'/></div>
+                <div><input type="button" value="2" onclick='v("2")'/></div>
+                <div><input type="button" value="1" onclick='v("1")'/></div>
+                <div><input type="button" value="+" onclick='v("+")'/></div>
+               </div>
+                <div>
+                    <input type="button" value="0" onclick='v("0")'/>
+                    <input type="button" value="00" onclick='v("00")'/>
+                    <input type="button" value="=" class="equal" onclick='e()'/>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function c(val){
+        document.getElementById("d").value = val; 
+    }
+    function v(val){
+        document.getElementById("d").value += val;
+    }
+    function e(){
+    try    
+    {    
+        c(eval(document.getElementById("d").value))    
+    }    
+    catch(e)    
+    {    
+        c('Error') }    
+    }  
+</script>
+</html>
